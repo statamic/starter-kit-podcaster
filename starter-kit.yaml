@@ -2,7 +2,9 @@ export_paths:
   - app/Listeners/PubSubHubbub.php
   - app/Providers/EventServiceProvider.php
   - app/Widgets
+  - app/Modifiers
   - content
+  - config/filesystems.php
   - config/podcaster.php
   - config/statamic/cp.php
   - resources/blueprints
