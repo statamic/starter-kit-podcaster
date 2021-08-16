@@ -1,0 +1,9 @@
+{
+    "name": "my-vendor-name/starter-kit-podcaster",
+    "extra": {
+        "statamic": {
+            "name": "Starter Kit Podcaster",
+            "description": "Starter Kit Podcaster starter kit"
+        }
+    }
+}

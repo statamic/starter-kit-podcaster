@@ -1,0 +1,7 @@
+<button
+    x-data
+    class="mr-4 group outline-none flex items-center"
+    @click="$store.player.playEpisode('{{ title | add_slashes }}', '{{ audio_file }}', '{{ audio_file:mime_type }}', '{{ url }}')">
+    {{ svg src="img/play" class="overflow-visible {height ?? 'h-8'} {width ?? 'w-8'} group-hover:text-gray-700" x-show="! ($store.player.playing && $store.player.audio_file === '{{ audio_file }}')" x-cloak="true" }}
+    {{ svg src="img/pause" class="overflow-visible {height ?? 'h-8'} {width ?? 'w-8'} group-hover:text-gray-700" x-show="$store.player.playing && $store.player.audio_file === '{{ audio_file }}'" x-cloak="true" }}
+</button>

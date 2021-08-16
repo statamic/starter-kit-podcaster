@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{ partial:seo }}
+        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}" data-turbolinks-track="reload">
+        <link rel="stylesheet" href="/css/plyr.css">
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ podcast:title }}" href="{{ route:feed }}" />
+        <script src="{{ mix src='/js/site.js' }}" data-turbolinks-track="reload" defer></script>
+        <style>
+            :root {
+                --primary-color: {{ theme:primary_color ?? "#FA7268" }};
+                --secondary-color: {{ theme:secondary_color ?? "#C62368" }};
+                --plyr-color-main: {{ theme:primary_color ?? "#C62368" }};
+            }
+        </style>
+        <script>
+            window.primaryColor = '{{ theme:primary_color ?? "#FA7268" }}';
+            window.secondaryColor = '{{ theme:secondary_color ?? "#C62368" }}';
+        </script>
+        {{ partial:favicons }}
+    </head>
+    <body class="bg-white min-h-screen h-full relative">
+        <nav class="max-w-6xl mx-auto px-4 font-mono py-6 md:py-20 relative z-10 border-b md:border-0">
+            <ul class="flex space-x-10 justify-center md:justify-start text-sm">
+                {{ nav include_home="true" }}
+                    <li>
+                        <a class="py-px hover:text-gray-700 {{ is_current || is_parent ?= 'font-bold border-b-3 border-black' }}" href="{{ url }}">
+                            {{ title }}
+                        </a>
+                    </li>
+                {{ /nav }}
+            </ul>
+        </nav>
+        {{ template_content }}
+        {{ partial:player }}
+        <footer class="max-w-6xl mx-auto px-4 font-mono py-6 mt-6 relative z-10 border-t md:border-none " x-data :class="$store.player.playing && 'pb-24'">
+            <p class="text-gray-500 text-sm"">{{ podcast:copyright }} &mdash; Powered by <a href="https://statamic.com" class="underline hover:text-black">Statamic</a></p>
+            <div class="flex flex-wrap items-center space-x-5 justify-center md:justify-start mt-4">
+            {{ theme:social_links }}
+                <a href="{{ url }}" class="flex items-center justify-center h-5 w-5" title="{{ name }}">
+                    {{ svg :src="icon" aria-label="{name} icon" role="img" class="hover:text-black text-gray-500" }}
+                </a>
+            {{ /theme:social_links }}
+            </div>
+        </footer>
+        {{ svg src="img/waves-vertical" class="h-full min-h-full absolute top-0 right-0 bottom-0 hidden md:block md:w-[1000px]" }}
+    </body>
+</html>

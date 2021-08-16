@@ -1,0 +1,19 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: primary_color
+        field:
+          swatches:
+            - '#E24C67'
+            - '#062e56'
+          theme: classic
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - HEXA
+          display: 'Primary Color'
+          type: color
+          icon: color
+          listable: hidden

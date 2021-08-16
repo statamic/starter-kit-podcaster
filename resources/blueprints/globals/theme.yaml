@@ -1,0 +1,77 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: social_links
+        field:
+          fields:
+            -
+              handle: name
+              field:
+                type: text
+                display: Name
+                width: 25
+            -
+              handle: url
+              field:
+                type: text
+                display: URL
+                width: 50
+            -
+              handle: icon
+              field:
+                container: assets
+                mode: list
+                restrict: true
+                folder: theme/social
+                allow_uploads: true
+                max_files: 1
+                type: assets
+                display: Icon
+                width: 25
+          mode: table
+          add_row: 'Add Link'
+          reorderable: true
+          type: grid
+          instructions: 'Set links to social media'
+          display: Social
+          listable: hidden
+      -
+        handle: primary_color
+        field:
+          swatches:
+            - '#fa7268'
+            - '#c62368'
+            - '#0cf3de'
+            - '#000000'
+          theme: nano
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Primary Color'
+          type: color
+          icon: color
+          instructions: 'Choose your main brand color. This is used in the player and as the left-most color in the background wave.'
+          width: 50
+          listable: hidden
+      -
+        handle: secondary_color
+        field:
+          theme: nano
+          swatches:
+            - '#fa7268'
+            - '#c62368'
+            - '#0cf3de'
+            - '#000000'
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Secondary Color'
+          type: color
+          icon: color
+          instructions: 'Choose your secondary color. This is used as the right-most color in the background wave.'
+          width: 50
+          listable: hidden

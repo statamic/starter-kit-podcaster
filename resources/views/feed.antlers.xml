@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+  xmlns:podcast="https://podcastindex.org/namespace/1.0">
+  <channel>
+    <atom:link rel="self" type="application/rss+xml" href="{{ site:url }}" />
+    <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
+    <title>{{ podcast:title }}</title>
+    <generator>Statamic Podcaster (https://statamic.com/starter-kits/podcaster)</generator>
+    <description>{{ podcast:description }}</description>
+    <copyright>{{ podcast:copyright | sanitize }}</copyright>
+    <podcast:locked owner="{{ podcast:owner_email }}">{{ podcast:locked ? 'Yes' : 'No' }}</podcast:locked>
+    <language>{{ podcast:spoken_language }}</language>
+    {{ collection:episodes sort="date:desc" limit="1" }}<pubDate>{{ date format="r" }}</pubDate>{{ /collection:episodes }}
+    <lastBuildDate>{{ now format="r" }}</lastBuildDate>
+    <link>{{ site:url }}</link>
+    <image>
+      <url>{{ podcast:cover_art:permalink }}</url>
+      <title>{{ podcast:title }}</title>
+      <link>{{ site:url }}</link>
+    </image>
+    {{ podcast:primary_category }}
+    {{ podcast:secondary_category }}
+    <itunes:type>{{ podcast:type === 'desc' ? 'episodic' : 'serial'  }}</itunes:type>
+    <itunes:author>{{ podcast:author }}</itunes:author>
+    <itunes:image href="{{ podcast:cover_art:permalink }}"/>
+    <itunes:summary>{{ podcast:description }}</itunes:summary>
+    <itunes:subtitle>{{ podcast:description }}</itunes:subtitle>
+    <itunes:keywords>{{ podcast:keywords | list }}</itunes:keywords>
+    <itunes:owner>
+      <itunes:name>{{ podcast:owner ?? podcast:author }}</itunes:name>
+      <itunes:email>{{ pocast:owner_email }}</itunes:email>
+    </itunes:owner>
+    <itunes:complete>{{ podcast:complete ? 'Yes' : 'No' }}</itunes:complete>
+    <itunes:explicit>{{ podcast:explicit ? 'Yes' : 'No' }}</itunes:explicit>
+    <itunes:block>{{ podcast:itunes_block ? 'Yes' : 'No' }}</itunes:block>
+    <googleplay:author>{{ podcast:author }}</googleplay:author>
+    <googleplay:image href="{{ podcast:cover_art:permalink }}"/>
+    <googleplay:summary>{{ podcast:description }}</googleplay:summary>
+    <googleplay:explicit>{{ podcast:explicit ? 'Yes' : 'No' }}</googleplay:explicit>
+    <googleplay:block>{{ podcast:google_block ? 'Yes' : 'No' }}</googleplay:block>
+    {{ if funding }}
+    {{ funding }}
+      <podcast:funding url="{{ url }}">{{ description }}</podcast:funding>
+    {{ /funding }}
+    {{ /if }}
+    {{ collection:episodes sort="date:{podcast:type}" :limit="podcast:feed_limit" }}
+    <item>
+      <title>{{ title | sanitize | cdata }}</title>
+      <link>{{ permalink }}</link>
+      <pubDate>{{ date format="r" }}</pubDate>
+      <guid isPermaLink="false">{{ id }}</guid>
+      <description>{{ description | cdata }}</description>
+      <itunes:episode>{{ episode_number }}</itunes:episode>
+      <itunes:title><![CDATA[{{ title | sanitize }}]]></itunes:title>
+      <itunes:author>{{ podcast:author }}</itunes:author>
+      <itunes:duration>{{ audio_file | duration }}</itunes:duration>
+      <itunes:summary>{{ summary }}</itunes:summary>
+      <itunes:keywords>{{ podcast:keywords }}</itunes:keywords>
+      <itunes:explicit>{{ explicit ? 'Yes' : 'No' }}</itunes:explicit>
+      <itunes:episodeType>{{ type }}</itunes:episodeType>
+      {{ if artwork }}<itunes:image href="{{ artwork:permalink }}"/>{{ /if }}
+      <itunes:block>{{ itunes_block ? 'Yes' : 'No' }}</itunes:block>
+      <googleplay:block>{{ google_block ? 'Yes' : 'No' }}</googleplay:block>
+      <googleplay:explicit>{{ explicit ? 'Yes' : 'No' }}</googleplay:explicit>
+      <content:encoded>{{ description | cdata }}</content:encoded>
+      <author>{{ podcast:author }}</author>
+      <enclosure url="{{ audio_file:permalink }}" length="{{ audio_file:size_bytes }}" type="{{ audio_file:mime_type }}"/>
+      <podcast:episode>{{ episode_number }}</podcast:episode>
+    </item>
+    {{ /collection:episodes }}
+  </channel>
+</rss>

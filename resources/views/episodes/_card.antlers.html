@@ -1,0 +1,20 @@
+<div class="border-t py-4 flex items-start">
+    {{ partial:play-button }}
+    <div class="pt-[2px]">
+        <h3 class="mb-3">
+            <a href="{{ url }}" class="text-lg font-bold hover:text-gray-700 leading-snug">{{ title | widont }}</a>
+        </h3>
+        <p class="text-sm antialiased">{{ summary }}</p>
+        <div class="mt-4 font-mono text-gray-400 text-xs flex flex-wrap space-x-2 md:space-x-4 uppercase tracking-widest">
+            <span>Ep.{{ episode_number }}</span>
+            <span class="text-gray-300">/</span>
+            <span>{{ date }}</span>
+            <span class="text-gray-300">/</span>
+            <span>{{ audio_file | duration }}</span>
+            {{ if podcast:explicit || explicit }}
+                <span class="text-gray-300">/</span>
+                <span>Explicit</span>
+            {{ /if }}
+        </div>
+    </div>
+</div>

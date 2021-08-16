@@ -1,0 +1,25 @@
+export_paths:
+  - app/Listeners/PubSubHubbub.php
+  - app/Providers/EventServiceProvider.php
+  - app/Widgets
+  - content
+  - config/podcaster.php
+  - config/statamic/cp.php
+  - resources/blueprints
+  - resources/css
+  - resources/js
+  - resources/views
+  - routes/web.php
+  - public/assets
+  - public/css
+  - public/img
+  - public/js
+  - package.json
+  - tailwind.config.js
+  - webpack.mix.js
+  - .env.example
+  - README.md
+dependencies:
+  owen-oj/laravel-getid3: ^1.3
+  statamic/podcast-categories: ^1.0
+  statamic/ssg: ^0.7.0

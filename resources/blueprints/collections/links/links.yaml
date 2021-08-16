@@ -1,0 +1,47 @@
+title: Links
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: link
+        field:
+          input_type: url
+          antlers: true
+          display: Link
+          type: text
+          icon: text
+          listable: hidden
+          instructions: 'Full URL to the podcast'
+          placeholder: 'https://example.com/your-podcast'
+      -
+        handle: badge
+        field:
+          mode: grid
+          container: assets
+          folder: theme/badges
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Badge
+          type: assets
+          icon: assets
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required

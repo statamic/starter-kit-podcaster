@@ -1,0 +1,22 @@
+title: Podcast
+data:
+  title: 'Breakfast Cereal'
+  cover_art: artwork/breakfast-cereal-cover.jpg
+  description: 'One bowl of cereal eaten and meticulously reviewed, week by week.'
+  type: desc
+  primary_category: Comedy
+  secondary_category: 'Health & Fitness » Nutrition'
+  keywords:
+    - cereal
+    - reviews
+    - breakfast
+  spoken_language: en
+  author: 'Jack McDade'
+  copyright: '© {{ now format="Y" }} Jack McDade'
+  owner_name: 'Jack McDade'
+  owner_email: jack@jackmcdade.com
+  explicit: false
+  itunes_block: false
+  google_block: false
+  locked: false
+  complete: false

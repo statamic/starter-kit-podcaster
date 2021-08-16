@@ -1,0 +1,12 @@
+title: Episodes
+template: episodes/show
+layout: layout
+mount: 902d111c-b83e-43fe-98e0-80b83a33d750
+revisions: false
+route: '/{mount}/{slug}'
+date: true
+sort_dir: desc
+default_status: draft
+date_behavior:
+  past: public
+  future: private

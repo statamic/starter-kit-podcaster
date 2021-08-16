@@ -1,0 +1,153 @@
+title: Episodes
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          width: 75
+      -
+        handle: episode_number
+        field:
+          display: 'Episode Number'
+          type: integer
+          icon: integer
+          width: 25
+          listable: hidden
+      -
+        handle: audio_file
+        field:
+          mode: list
+          container: assets
+          folder: audio
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Audio File'
+          type: assets
+          icon: assets
+          instructions: 'Supported file formats are: `.mp3`, `.m4a`, `.aiff`, or `.wav`.'
+          listable: hidden
+          validate:
+            - 'mimes:mp3,m4a,aiff,wav'
+      -
+        handle: episode_type
+        field:
+          options:
+            full: Full
+            trailer: Trailer
+            bonus: Bonus
+          default: full
+          inline: true
+          cast_booleans: false
+          display: 'Episode Type'
+          type: button_group
+          icon: radio
+          listable: hidden
+      -
+        handle: summary
+        field:
+          antlers: false
+          display: Summary
+          type: textarea
+          icon: textarea
+          listable: hidden
+      -
+        handle: description
+        field:
+          always_show_set_button: false
+          buttons:
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+          save_html: true
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: true
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          display: 'Description / Show Notes'
+          type: bard
+          icon: bard
+          listable: hidden
+      -
+        handle: artwork
+        field:
+          mode: grid
+          container: assets
+          folder: artwork
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: Artwork
+          type: assets
+          icon: assets
+          instructions: 'Optional, episode-specific artwork that replaces the show''s for this one episode'
+          listable: hidden
+      -
+        handle: explicit
+        field:
+          display: Explicit
+          type: toggle
+          icon: toggle
+          instructions: 'Does the episode contain explicit content?'
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+          listable: hidden
+          mode: single
+          time_enabled: true
+          time_required: false
+          earliest_date: '1900-01-01'
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+  settings:
+    display: 'Advanced Settings'
+    fields:
+      -
+        handle: itunes_block
+        field:
+          display: 'Block from iTunes'
+          type: toggle
+          icon: toggle
+          instructions: 'If you want an episode removed from the Apple directory, flip this on.'
+          listable: hidden
+      -
+        handle: google_block
+        field:
+          display: 'Block from Google Play'
+          type: toggle
+          icon: toggle
+          instructions: 'If you want an episode removed from the Google Play directory, flip this on.'
+          listable: hidden

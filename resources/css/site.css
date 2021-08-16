@@ -1,0 +1,92 @@
+/* This is all you. */
+
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
+:root {
+    --plyr-audio-controls-background: transparent;
+}
+
+.player {
+    @apply fixed inset-x-0 bottom-0 flex items-center border-t;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: hsla(0, 0%, 100%, .8);
+    height: 60px;
+    z-index: 100;
+
+    .plyr { width: 100%; }
+}
+
+@screen md {
+    .player {
+        height: 80px;
+    }
+}
+
+h1 {
+    @apply font-sans text-5xl font-black;
+}
+
+.content {
+    @apply font-sans;
+
+    h2 {
+        @apply font-bold text-2xl mb-8;
+    }
+
+    h3 {
+        @apply font-bold text-lg mb-4;
+    }
+
+    > p {
+        margin-bottom: 2em;
+    }
+
+    a {
+        @apply underline;
+
+        &:hover {
+            @apply text-gray-700;
+        }
+    }
+
+    ul:not(.list-none) {
+        @apply pl-0 list-disc ml-8 mb-8;
+
+        li {
+            @apply mb-1;
+        }
+
+        li ul {
+            @apply mb-0;
+        }
+    }
+
+    ol {
+        @apply pl-0 list-decimal ml-8 mb-8;
+
+        li {
+            @apply mb-1;
+        }
+    }
+}
+
+.turbo-progress-bar {
+    @apply bg-primary;
+    height: 5px;
+}
+
+[x-cloak] {
+    display: none;
+}

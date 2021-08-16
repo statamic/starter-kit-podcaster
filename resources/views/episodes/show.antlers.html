@@ -1,0 +1,36 @@
+<div class="max-w-6xl mx-auto px-4 py-8 relative z-10">
+    <div class="flex items-start">
+        <article class="pr-24 flex-1 py-8">
+            {{ if podcast:explicit || explicit }}
+                <img src="/img/parental-advisory.svg" alt="Parental Advisory: Explicit Content Warning" class="w-16 mr-2 shadow-lg mb-6">
+            {{ /if }}
+            <h1 class="mb-6">{{ title | entities | widont }}</h1>
+            <div class="flex items-start">
+                {{ partial:play-button height="h-10" width="h-10" }}
+                <div>
+                    <p class="text-gray-800 text-lg">{{ summary }}</p>
+                    <div class="mt-4 font-mono text-gray-500 text-xs flex space-x-3 uppercase tracking-widest">
+                        <span>{{ date }}</span>
+                        <span>/</span>
+                        <span>{{ audio_file | duration }}</span>
+                        <span>/</span>
+                        <span>Episode {{ episode_number }}</span>
+                    </div>
+                </div>
+            </div>
+            {{ if description }}
+            <div class="mt-8 content pt-8 border-t">
+                <h2>Show Notes</h2>
+                {{ description }}
+            {{ /if }}
+        </article>
+        <div class="w-[300px] relative group">
+            {{ if artwork }}
+                <img src="{{ glide:artwork square="600" }}" alt="{{ artwork:alt ?? "Episode Artwork" }}" width="300" class="shadow-2xl inset-0 absolute z-10 group-hover:rotate-12 origin-bottom-left transform-gpu transition ease-in-out duration-200">
+                <img src="{{ glide:podcast:cover_art square="600" }}" alt="{{ podcast:title }} Cover Art" width="300" class="shadow-2xl inset-0 absolute group-hover:-translate-y-16 group-hover:-rotate-12 origin-bottom-left transform-gpu transition ease-in-out duration-200">
+            {{ else }}
+                <img src="{{ glide:podcast:cover_art square="600" }}" alt="{{ podcast:title }} Cover Art" width="300" class="shadow-2xl">
+            {{ /if }}
+        </div>
+    </div>
+</div>

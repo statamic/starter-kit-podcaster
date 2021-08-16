@@ -1,0 +1,18 @@
+<div class="max-w-6xl mx-auto px-4 relative z-10">
+    <div class="flex flex-col md:flex-row">
+        <article class="order-2 md:order-first md:pr-32 flex-1 pt-16 pb-8">
+            <h1 class="mb-8">{{ title }}</h1>
+            {{ collection:episodes sort="date:{podcast:type}" }}
+                {{ partial:episodes/card }}
+            {{ /collection:episodes }}
+        </article>
+        <div class="order-1 md:w-[350px]">
+            <div class="md:hidden flex items-center mt-8">
+                <img src="{{ glide:podcast:cover_art square="120" }}" alt="{{ podcast:title }} Cover Artwork" width="60" class="shadow">
+                <h2 class="font-semibold text-lg ml-4">{{ podcast:title }}</h2>
+
+            </div>
+            <img src="{{ glide:podcast:cover_art square="700" }}" alt="{{ podcast:title }} Cover Artwork" width="350" class="hidden md:block shadow-2xl">
+        </div>
+    </div>
+</div>

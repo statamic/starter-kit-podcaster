@@ -1,0 +1,320 @@
+sections:
+  details:
+    display: 'Required Details'
+    fields:
+      -
+        handle: title
+        field:
+          input_type: text
+          antlers: false
+          display: Title
+          type: text
+          icon: text
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: cover_art
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          max_files: 1
+          display: 'Cover Art'
+          type: assets
+          icon: assets
+          listable: hidden
+          folder: artwork
+      -
+        handle: description
+        field:
+          antlers: false
+          display: Description
+          type: textarea
+          icon: textarea
+          listable: hidden
+      -
+        handle: type
+        field:
+          options:
+            desc: 'Episodic (Sorted by newest first)'
+            asc: 'Serial (Sorted in order of publishing)'
+          default: episodic
+          inline: false
+          cast_booleans: false
+          display: 'Show Type'
+          type: radio
+          icon: radio
+          listable: hidden
+      -
+        handle: primary_category
+        field:
+          display: 'Primary Category'
+          type: podcast_categories
+          listable: hidden
+          width: 50
+      -
+        handle: secondary_category
+        field:
+          display: 'Secondary Category'
+          type: podcast_categories
+          listable: hidden
+          width: 50
+      -
+        handle: keywords
+        field:
+          display: Keywords
+          type: taggable
+          icon: tags
+          width: 50
+          listable: hidden
+      -
+        handle: spoken_language
+        field:
+          options:
+            es: Spanish
+            de: German
+            fr: French
+            af: Afrikaans
+            sq: Albanian
+            ar: Arabic
+            eu: Basque
+            be: Belarusian
+            bg: Bulgarian
+            ca: Catalan
+            zh-cn: 'Chinese (Simplified)'
+            zh-tw: 'Chinese (Traditional)'
+            hr: Croatian
+            cs: Czech
+            da: Danish
+            nl: Dutch
+            nl-be: 'Dutch (Belgium)'
+            nl-nl: 'Dutch (Netherlands)'
+            en: English
+            en-au: 'English (Australia)'
+            en-bz: 'English (Belize)'
+            en-ca: 'English (Canada)'
+            en-ie: 'English (Ireland)'
+            en-jm: 'English (Jamaica)'
+            en-nz: 'English (New Zealand)'
+            en-ph: 'English (Phillipines)'
+            en-za: 'English (South Africa)'
+            en-tt: 'English (Trinidad)'
+            en-gb: 'English (United Kingdom)'
+            en-us: 'English (United States)'
+            en-zw: 'English (Zimbabwe)'
+            et: Estonian
+            fo: Faeroese
+            fi: Finnish
+            fr-be: 'French (Belgium)'
+            fr-ca: 'French (Canada)'
+            fr-fr: 'French (France)'
+            fr-lu: 'French (Luxembourg)'
+            fr-mc: 'French (Monaco)'
+            fr-ch: 'French (Switzerland)'
+            gd: Gaelic
+            gl: Galician
+            de-at: 'German (Austria)'
+            de-de: 'German (Germany)'
+            de-li: 'German (Liechtenstein)'
+            de-lu: 'German (Luxembourg)'
+            de-ch: 'German (Switzerland)'
+            el: Greek
+            haw: Hawaiian
+            he: Hebrew
+            hi: Hindi
+            hu: Hungarian
+            is: Icelandic
+            in: Indonesian
+            ga: Irish
+            it: Italian
+            it-it: 'Italian (Italy)'
+            it-ch: 'Italian (Switzerland)'
+            ja: Japanese
+            ko: Korean
+            mk: Macedonian
+            ne: Nepali
+            'no': Norwegian
+            fa: Persian
+            pl: Polish
+            pt: Portuguese
+            pt-br: 'Portuguese (Brazil)'
+            pt-pt: 'Portuguese (Portugal)'
+            pa: Punjabi
+            ro: Romanian
+            ro-mo: 'Romanian (Moldova)'
+            ro-ro: 'Romanian (Romania)'
+            ru: Russian
+            ru-mo: 'Russian (Moldova)'
+            ru-ru: 'Russian (Russia)'
+            sr: Serbian
+            sk: Slovak
+            sl: Slovenian
+            es-ar: 'Spanish (Argentina)'
+            es-bo: 'Spanish (Bolivia)'
+            es-cl: 'Spanish (Chile)'
+            es-co: 'Spanish (Colombia)'
+            es-cr: 'Spanish (Costa Rica)'
+            es-do: 'Spanish (Dominican Republic)'
+            es-ec: 'Spanish (Ecuador)'
+            es-sv: 'Spanish (El Salvador)'
+            es-gt: 'Spanish (Guatemala)'
+            es-hn: 'Spanish (Honduras)'
+            es-mx: 'Spanish (Mexico)'
+            es-ni: 'Spanish (Nicaragua)'
+            es-pa: 'Spanish (Panama)'
+            es-py: 'Spanish (Paraguay)'
+            es-pe: 'Spanish (Peru)'
+            es-pr: 'Spanish (Puerto Rico)'
+            es-es: 'Spanish (Spain)'
+            es-uy: 'Spanish (Uruguay)'
+            es-ve: 'Spanish (Venezuela)'
+            sw: Swahili
+            sv: Swedish
+            sv-fi: 'Swedish (Finland)'
+            sv-se: 'Swedish (Sweden)'
+            th: Thai
+            tr: Turkish
+            uk: Ukranian
+            vi: Vietnamese
+          multiple: false
+          default: en
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: 'Spoken Language'
+          type: select
+          icon: select
+          width: 50
+          listable: hidden
+      -
+        handle: author
+        field:
+          input_type: text
+          antlers: false
+          display: Author
+          type: text
+          icon: text
+          instructions: 'Can be an individual or company.'
+          listable: hidden
+          width: 50
+      -
+        handle: copyright
+        field:
+          input_type: text
+          antlers: true
+          default: '© {{ now format="Y" }} Your Name'
+          display: Copyright
+          type: text
+          icon: text
+          listable: hidden
+          width: 50
+          instructions: 'Use `{{ now format="Y" }}` to insert an auto-updating year'
+      -
+        handle: owner_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Owner Name'
+          type: text
+          icon: text
+          instructions: 'If different from author'
+          width: 50
+          listable: hidden
+      -
+        handle: owner_email
+        field:
+          input_type: email
+          antlers: false
+          display: 'Owner Email'
+          type: text
+          icon: text
+          instructions: 'Podcast owner information is public.'
+          width: 50
+          listable: hidden
+      -
+        handle: explicit
+        field:
+          display: Explicit
+          type: toggle
+          icon: toggle
+          instructions: 'If your podcast has explicit content, do your listeners a favor and let them know.'
+          listable: hidden
+  advanced:
+    display: 'Advanced Settings'
+    fields:
+      -
+        handle: funding
+        field:
+          fields:
+            -
+              handle: url
+              field:
+                input_type: url
+                antlers: false
+                display: URL
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+            -
+              handle: description
+              field:
+                input_type: text
+                antlers: false
+                display: Description
+                type: text
+                icon: text
+                width: 50
+                listable: hidden
+          mode: table
+          add_row: 'Add Link'
+          reorderable: true
+          display: Funding
+          type: grid
+          icon: grid
+          instructions: 'Link to places listeners can support and fund the podcast (player support may vary).'
+          listable: hidden
+      -
+        handle: itunes_block
+        field:
+          display: 'Block from iTunes'
+          type: toggle
+          icon: toggle
+          instructions: 'If you don''t want this podcast listed on the Apple directory, flip this on.'
+          listable: hidden
+      -
+        handle: google_block
+        field:
+          display: 'Block from Google Play'
+          type: toggle
+          icon: toggle
+          instructions: 'If you don''t want this podcast listed on the Google directory, flip this on.'
+          listable: hidden
+      -
+        handle: feed_limit
+        field:
+          display: 'RSS Feed Episode Limit'
+          type: integer
+          icon: integer
+          instructions: 'Limit your RSS feed to a specific number of episodes. Leave blank for all.'
+          listable: hidden
+      -
+        handle: locked
+        field:
+          display: Locked
+          type: toggle
+          icon: toggle
+          instructions: 'Enable to prevent podcast platforms from importing this feed (Not all platforms support this open standard).'
+          listable: hidden
+      -
+        handle: complete
+        field:
+          display: Complete
+          type: toggle
+          icon: toggle
+          instructions: 'Mark this podcast as complete (no further episodes).'
+          listable: hidden
