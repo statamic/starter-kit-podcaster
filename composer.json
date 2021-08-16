@@ -1,5 +1,5 @@
 {
-    "name": "my-vendor-name/starter-kit-podcaster",
+    "name": "statamic/starter-kit-podcaster",
     "extra": {
         "statamic": {
             "name": "Starter Kit Podcaster",
