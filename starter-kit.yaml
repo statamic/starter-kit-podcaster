@@ -4,7 +4,6 @@ export_paths:
   - app/Widgets
   - app/Modifiers
   - content
-  - config/filesystems.php
   - config/podcaster.php
   - config/statamic/cp.php
   - resources/blueprints
