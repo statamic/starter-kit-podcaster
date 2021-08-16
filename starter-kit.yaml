@@ -22,4 +22,4 @@ export_paths:
 dependencies:
   owen-oj/laravel-getid3: ^1.3
   statamic/podcast-categories: ^1.0
-  statamic/ssg: ^0.7
+  statamic/ssg: ~0.7
