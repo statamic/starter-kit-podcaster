@@ -5,7 +5,7 @@
 
 ## Features
 
-At first glance this kit might look very simple, but there's a lot going on behind the scenes.
+This kit is deceptively simple – it may look like a 3 page site but there's a whole treasure trove of business logic and UI detail just under the surface.
 ### Turbo Powered
 
 Podcaster's frontend uses [Turbo](https://turbo.hotwire.dev/) to eliminate full page reloads, allowing the podcast player to persist across page changes without having to build and maintain the site as a SPA (single page application). State changes to the UI (such as which episode is playing) are persisted using [Alpine.js](https://alpinejs.dev).
