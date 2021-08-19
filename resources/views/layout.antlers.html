@@ -23,7 +23,7 @@
         {{ partial:favicons }}
     </head>
     <body class="bg-white min-h-screen h-full relative">
-        <nav class="max-w-6xl mx-auto px-4 font-mono py-6 md:py-20 relative z-10 border-b md:border-0">
+        <nav class="max-w-6xl mx-auto px-6 font-mono py-6 md:py-20 relative z-10 border-b md:border-0">
             <ul class="flex space-x-10 justify-center md:justify-start text-sm">
                 {{ nav include_home="true" }}
                     <li>
@@ -36,7 +36,7 @@
         </nav>
         {{ template_content }}
         {{ partial:player }}
-        <footer class="max-w-6xl mx-auto px-4 font-mono py-6 mt-6 relative z-10 border-t md:border-none " x-data :class="$store.player.playing && 'pb-24'">
+        <footer class="max-w-6xl mx-auto px-6 font-mono py-6 mt-6 relative z-10 border-t md:border-none " x-data :class="$store.player.playing && 'pb-24'">
             <p class="text-gray-500 text-sm"">{{ podcast:copyright }} &mdash; Powered by <a href="https://statamic.com" class="underline hover:text-black">Statamic</a></p>
             <div class="flex flex-wrap items-center space-x-5 justify-center md:justify-start mt-4">
             {{ theme:social_links }}
