@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | PubSubHubBub
+    | PubSubHubbub
     |--------------------------------------------------------------------------
     |
     | Podcast feeds are PULL system, relying on podcast directories to crawl
@@ -16,5 +16,7 @@ return [
     |  - https://podnews.net/article/pubsubhubbub-for-podcasters
     */
 
-    'enabled' => env('PODCASTER_PUBSUBHUBBUB_ENABLED', false),
+    'pubsubhubbub' => [
+        'enabled' => env('PODCASTER_PUBSUBHUBBUB_ENABLED', false),
+    ]
 ];

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Statamic\Events\EntrySaved;
-use App\Listeners\PubSubHubBub;
+use App\Listeners\PubSubHubbub;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
