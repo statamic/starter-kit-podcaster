@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "@hotwired/turbo": "^7.0.0-rc.1",
-        "alpinejs": "^3.0.0",
+        "alpinejs": "~3.0.6",
         "chroma-js": "^2.1.2",
         "plyr": "^3.6.8"
     }
