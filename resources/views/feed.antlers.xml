@@ -34,7 +34,7 @@
     <itunes:keywords>{{ podcast:keywords | list }}</itunes:keywords>
     <itunes:owner>
       <itunes:name>{{ podcast:owner ?? podcast:author }}</itunes:name>
-      <itunes:email>{{ podcast:owner_email }}</itunes:email>
+      <itunes:email>{{ pocast:owner_email }}</itunes:email>
     </itunes:owner>
     <itunes:complete>{{ podcast:complete ? 'Yes' : 'No' }}</itunes:complete>
     <itunes:explicit>{{ podcast:explicit ? 'Yes' : 'No' }}</itunes:explicit>
