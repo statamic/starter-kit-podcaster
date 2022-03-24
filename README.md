@@ -72,7 +72,6 @@ PODCASTER_PUBSUBHUBBUB_ENABLED=true
 
 Just a few extra things built on the PHP/Laravel site to make the experience better.
 
-- Duration Modifier
 - AddSlashes Modifier
 - PubSubHubbub Event Listener
 - Getting Started Dashboard Widget

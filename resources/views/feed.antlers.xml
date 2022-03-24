@@ -57,9 +57,9 @@
       <guid isPermaLink="false">{{ id }}</guid>
       <description>{{ description | cdata }}</description>
       <itunes:episode>{{ episode_number }}</itunes:episode>
-      <itunes:title><![CDATA[{{ title | sanitize }}]]></itunes:title>
+      <itunes:title>{{ title | sanitize | cdata }}</itunes:title>
       <itunes:author>{{ podcast:author }}</itunes:author>
-      <itunes:duration>{{ audio_file | duration }}</itunes:duration>
+      <itunes:duration>{{ audio_file:playtime }}</itunes:duration>
       <itunes:summary>{{ summary }}</itunes:summary>
       <itunes:keywords>{{ podcast:keywords }}</itunes:keywords>
       <itunes:explicit>{{ explicit ? 'Yes' : 'No' }}</itunes:explicit>

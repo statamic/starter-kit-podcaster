@@ -13,4 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::statamic('feed.xml', 'feed')->name('feed');
+Route::statamic('feed.xml', 'feed', ['content_type' => 'text/xml'])->name('feed');

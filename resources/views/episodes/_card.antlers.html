@@ -10,7 +10,7 @@
             <span class="text-gray-300">/</span>
             <span>{{ date }}</span>
             <span class="text-gray-300">/</span>
-            <span>{{ audio_file | duration }}</span>
+            <span>{{ audio_file:playtime }}</span>
             {{ if podcast:explicit || explicit }}
                 <span class="text-gray-300">/</span>
                 <span>Explicit</span>
