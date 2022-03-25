@@ -10,7 +10,11 @@ Alpine.store('ui', {
     ]).colors(5),
 });
 
-// Dark Blues: ['062e56', '001122']
+let plyr = new Plyr('audio', {
+    controls: ['play', 'rewind', 'progress', 'fast-forward', 'current-time', 'settings'],
+    iconUrl: '/img/plyr-sprite.svg',
+    seekTime: 15
+});
 
 Alpine.store('player', {
     plyr: null,
@@ -20,24 +24,19 @@ Alpine.store('player', {
     title: null,
     show: false,
     init() {
-        this.plyr = new Plyr('audio', {
-            controls: ['play', 'rewind', 'progress', 'fast-forward', 'current-time', 'settings'],
-            iconUrl: '/img/plyr-sprite.svg',
-            seekTime: 15
-        });
-        this.plyr.on('playing', event => {
+        plyr.on('playing', event => {
             Alpine.store('player').playing = true
         });
-        this.plyr.on('pause', event => {
+        plyr.on('pause', event => {
             Alpine.store('player').playing = false
         });
-        this.plyr.on('ended', event => {
+        plyr.on('ended', event => {
             Alpine.store('player').playing = false
         });
     },
     playEpisode(title, audio_file, mime_type, episode_url) {
         if (this.audio_file !== audio_file) {
-            this.plyr.source = {
+            plyr.source = {
                 type: 'audio',
                 title: title,
                 audio_file: audio_file,
@@ -52,14 +51,14 @@ Alpine.store('player', {
     },
     toggle(file) {
         if (this.playing && file === this.audio_file) {
-            this.plyr.pause();
+            plyr.pause();
 
-            // Events not sent when calling pause programatically
+            // Events not sent when calling pause programmatically
             // after setting .source
             Alpine.store('player').playing = false
             return;
         }
-        this.plyr.togglePlay()
+        plyr.togglePlay()
     },
 });
 
