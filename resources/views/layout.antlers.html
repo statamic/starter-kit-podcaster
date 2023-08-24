@@ -5,10 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {{ partial:seo }}
-        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}" data-turbolinks-track="reload">
         <link rel="stylesheet" href="/css/plyr.css">
         <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ podcast:title }}" href="{{ route:feed }}" />
-        <script src="{{ mix src='/js/site.js' }}" data-turbolinks-track="reload" defer></script>
+        {{ vite src="resources/js/site.js|resources/css/tailwind.css" attr:data-turbolinks-track="reload" attr:script="defer" }}
         <style>
             :root {
                 --primary-color: {{ theme:primary_color ?? "#FA7268" }};
