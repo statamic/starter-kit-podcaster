@@ -1,6 +1,6 @@
 <!-- statamic:hide -->
 # Podcaster
-> A Turn-Key Podcasting Starter Kit for Statamic 3
+> A Turn-Key Podcasting Starter Kit for Statamic
 <!-- /statamic:hide -->
 
 ## Features
