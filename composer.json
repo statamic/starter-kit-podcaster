@@ -1,9 +1,15 @@
 {
     "name": "statamic/starter-kit-podcaster",
+    "license": "proprietary",
     "extra": {
         "statamic": {
             "name": "Starter Kit Podcaster",
             "description": "Starter Kit Podcaster starter kit"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
         }
     }
 }
