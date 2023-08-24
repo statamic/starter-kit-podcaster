@@ -98,7 +98,7 @@ sections:
             en-ie: 'English (Ireland)'
             en-jm: 'English (Jamaica)'
             en-nz: 'English (New Zealand)'
-            en-ph: 'English (Phillipines)'
+            en-ph: 'English (Philippines)'
             en-za: 'English (South Africa)'
             en-tt: 'English (Trinidad)'
             en-gb: 'English (United Kingdom)'
@@ -176,7 +176,7 @@ sections:
             sv-se: 'Swedish (Sweden)'
             th: Thai
             tr: Turkish
-            uk: Ukranian
+            uk: Ukrainian
             vi: Vietnamese
           multiple: false
           default: en
