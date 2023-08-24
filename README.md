@@ -3,6 +3,8 @@
 > A Turn-Key Podcasting Starter Kit for Statamic
 <!-- /statamic:hide -->
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/52c2ed4c-5bae-4ae7-9d2d-b35c3028c33b/deploy-status)](https://app.netlify.com/sites/cerealpodcast/deploys)
+
 ## Features
 
 This kit is deceptively simple – it may look like a 3 page site but there's a whole treasure trove of business logic and UI detail just under the surface.
