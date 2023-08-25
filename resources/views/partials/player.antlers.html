@@ -1,4 +1,4 @@
-<div data-turbo-permanent id="player" x-data>
+<div id="player" x-data x-persist="player">
     <div class="player" x-show="$store.player.show"
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="transform translate-y-24"
@@ -17,3 +17,4 @@
         </audio>
     </div>
 </div>
+

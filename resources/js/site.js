@@ -1,6 +1,4 @@
-import * as Turbo from "@hotwired/turbo"
 import Plyr from 'plyr';
-import Alpine from 'alpinejs';
 import chroma from "chroma-js";
 
 Alpine.store('ui', {
@@ -61,26 +59,3 @@ Alpine.store('player', {
         plyr.togglePlay()
     },
 });
-
-Alpine.start();
-window.Alpine = Alpine;
-
-// Turbo + Alpine.js 3 bridge
-// via: https://gist.github.com/calebporzio/20cf74af4a015644c7bef5166cffd86c
-document.addEventListener('turbo:before-render', () => {
-    let permanents = document.querySelectorAll('[data-turbo-permanent]')
-
-    let undos = Array.from(permanents).map(el => {
-        el._x_ignore = true
-
-        return () => {
-            delete el._x_ignore
-        }
-    })
-
-    document.addEventListener('turbo:render', function handler() {
-        while(undos.length) undos.shift()()
-
-        document.removeEventListener('turbo:render', handler)
-    })
-})
