@@ -2,7 +2,7 @@
     {{ partial:play-button }}
     <div class="pt-[2px]">
         <h3 class="mb-3">
-            <a href="{{ url }}" class="text-lg font-bold hover:text-gray-700 leading-snug">{{ title | widont }}</a>
+            <a wire:navigate href="{{ url }}" class="text-lg font-bold hover:text-gray-700 leading-snug">{{ title | widont }}</a>
         </h3>
         <p class="text-sm antialiased">{{ summary }}</p>
         <div class="mt-4 font-mono text-gray-400 text-xs flex flex-wrap space-x-2 md:space-x-4 uppercase tracking-widest">

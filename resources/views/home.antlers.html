@@ -24,7 +24,7 @@
                 {{ partial:episodes/card }}
             {{ /collection:episodes }}
             {{ if {collection:count in="episodes"} > 4 }}
-                <a href="/episodes" class="w-full md:w-auto text-center inline-block mt-16 bg-white text-xs border border-gray-300 rounded px-3 py-2 font-mono tracking-widest text-gray-700 uppercase transition duration-200 ease-in-out transform-gpu hover:shadow-lg hover:-translate-y-1">
+                <a wire:navigate href="/episodes" class="w-full md:w-auto text-center inline-block mt-16 bg-white text-xs border border-gray-300 rounded px-3 py-2 font-mono tracking-widest text-gray-700 uppercase transition duration-200 ease-in-out transform-gpu hover:shadow-lg hover:-translate-y-1">
                     All Episodes &rarr;
                 </a>
             {{ /if }}

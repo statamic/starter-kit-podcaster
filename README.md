@@ -6,9 +6,9 @@
 ## Features
 
 This kit is deceptively simple – it may look like a 3 page site but there's a whole treasure trove of business logic and UI detail just under the surface.
-### Turbo Powered
+### Livewire Powered
 
-Podcaster's frontend uses [Turbo](https://turbo.hotwire.dev/) to eliminate full page reloads, allowing the podcast player to persist across page changes without having to build and maintain the site as a SPA (single page application). State changes to the UI (such as which episode is playing) are persisted using [Alpine.js](https://alpinejs.dev).
+Podcaster's frontend uses [Livewire](https://livewire.laravel.com.dev/) to eliminate full page reloads, allowing the podcast player to persist across page changes without having to build and maintain the site as a SPA (single page application).
 
 ### The Player
 
@@ -75,3 +75,9 @@ Just a few extra things built on the PHP/Laravel site to make the experience bet
 - AddSlashes Modifier
 - PubSubHubbub Event Listener
 - Getting Started Dashboard Widget
+
+### Customize the Frontend
+
+If you want to customize the frontend (it's a _starter_ kit after all), all you need to do while working on the site is run `npm run dev` for Vite to watch changes and recompile your Tailwind-driven CSS or JS.
+
+In production, use `npm run build` in your deploy script instead for Production-ready compiled resources.
