@@ -8,7 +8,7 @@
 This kit is deceptively simple – it may look like a 3 page site but there's a whole treasure trove of business logic and UI detail just under the surface.
 ### Livewire Powered
 
-Podcaster's frontend uses [Livewire](https://livewire.laravel.com.dev/) to eliminate full page reloads, allowing the podcast player to persist across page changes without having to build and maintain the site as a SPA (single page application).
+Podcaster's frontend uses [Livewire](https://livewire.laravel.com) to eliminate full page reloads, allowing the podcast player to persist across page changes without having to build and maintain the site as a SPA (single page application).
 
 ### The Player
 
