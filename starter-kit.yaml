@@ -1,5 +1,6 @@
 export_paths:
   - app/Listeners/PubSubHubbub.php
+  - app/Providers/AppServiceProvider.php
   - app/Providers/EventServiceProvider.php
   - app/Widgets
   - app/Modifiers
@@ -23,4 +24,5 @@ export_paths:
   - vite.config.js
   - .env.example
 dependencies:
+  livewire/livewire: ^3.0
   statamic/podcast-categories: ^1.0
