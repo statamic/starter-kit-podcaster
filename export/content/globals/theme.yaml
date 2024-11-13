@@ -1,0 +1,17 @@
+title: Theme
+data:
+  social_links:
+    -
+      name: Twitter
+      url: 'https://twitter.com/jackmcdade'
+      icon: theme/social/twitter.svg
+    -
+      name: Github
+      url: 'https://github.com/jackmcdade'
+      icon: theme/social/github.svg
+    -
+      name: Email
+      url: 'mailto:shout@jackmcdade.com'
+      icon: theme/social/email.svg
+  primary_color: '#FA7268'
+  secondary_color: '#C62368'

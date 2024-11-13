@@ -1,0 +1,50 @@
+title: Pages
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: template
+        field:
+          type: template
+          display: Template
+          localizable: true
+      -
+        handle: links
+        field:
+          mode: default
+          collections:
+            - links
+          display: Links
+          type: entries
+          icon: entries
+          instructions: 'Link to your podcast on various networks'
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          required: true
+          localizable: true
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true

@@ -1,0 +1,12 @@
+{{ if {installed:statamic/seo-pro} }}
+    {{ seo_pro:meta }}
+{{ else }}
+<title>{{ title ?? site:name }} / {{ podcast:title }}</title>
+<meta name="description" content="{{ summary ?? podcast:description }}">
+<meta property="og:title" content="{{ title ?? site:name }}" />
+<meta property="og:description" content="{{ summary ?? podcast:description }}" />
+<meta property="og:url" content="{{ permalink }}" />
+<meta property="og:site_name" content="{{ podcast:title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="{{ site:locale }}" />
+{{ /if }}

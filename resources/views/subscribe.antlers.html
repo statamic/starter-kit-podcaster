@@ -1,0 +1,19 @@
+<div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="flex items-center">
+        <article class="pr-32 flex-1 pt-16 pb-8">
+            <h1 class="mb-8">{{ title }} to {{ podcast:title }}</h1>
+            <div class="flex items-center mt-8 space-x-6">
+                {{ links }}
+                    <a href="{{ link }}">
+                        <img class="h-10 transition duration-200 ease-in-out filter transform-gpu hover:drop-shadow-lg hover:-translate-y-1"
+                            src="{{ badge }}"
+                            alt="Listen on {{ title }}" />
+                    </a>
+                {{ /links }}
+            </div>
+        </article>
+        <div class="w-[350px]">
+            <img src="{{ podcast:cover_art }}" alt="{{ podcast:title }} Cover Artwork" width="500" class="shadow-2xl">
+        </div>
+    </div>
+</div>

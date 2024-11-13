@@ -1,0 +1,17 @@
+updatable: true
+export_paths:
+  - content
+  - config/podcaster.php
+  - config/statamic/cp.php
+  - config/statamic/system.php
+  - resources/blueprints
+  - resources/css
+  - resources/js
+  - resources/views/errors
+  - package.json
+  - postcss.config.js
+  - public/assets
+  - public/build
+  - README.md
+  - tailwind.config.js
+  - vite.config.js
