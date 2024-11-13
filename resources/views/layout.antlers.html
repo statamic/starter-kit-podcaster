@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {{ partial:seo }}
-        <link rel="stylesheet" href="/css/plyr.css">
+        {{ partial:podcaster::partials/seo }}
         <link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ podcast:title }}" href="{{ route:feed }}" />
-        {{ vite src="resources/js/site.js|resources/css/tailwind.css" }}
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
         <style>
             :root {
                 --primary-color: {{ theme:primary_color ?? "#FA7268" }};
@@ -19,7 +18,7 @@
             window.primaryColor = '{{ theme:primary_color ?? "#FA7268" }}';
             window.secondaryColor = '{{ theme:secondary_color ?? "#C62368" }}';
         </script>
-        {{ partial:favicons }}
+        {{ partial:podcaster::partials/favicons }}
     </head>
     <body class="bg-white min-h-screen h-full relative">
         <nav class="max-w-6xl mx-auto px-6 font-mono py-6 md:py-20 relative z-10 border-b md:border-0">
@@ -34,7 +33,7 @@
             </ul>
         </nav>
         {{ template_content }}
-        {{ partial:player }}
+        {{ partial:podcaster::partials/player }}
         <footer class="max-w-6xl mx-auto px-6 font-mono py-6 mt-6 relative z-10 border-t md:border-none " x-data :class="$store.player.playing && 'pb-24'">
             <p class="text-gray-500 text-sm"">{{ podcast:copyright }} &mdash; Powered by <a href="https://statamic.com" class="underline hover:text-black">Statamic</a></p>
             <div class="flex flex-wrap items-center space-x-5 justify-center md:justify-start mt-4">
@@ -45,6 +44,6 @@
             {{ /theme:social_links }}
             </div>
         </footer>
-        {{ svg src="img/waves-vertical" class="h-full min-h-full absolute top-0 right-0 bottom-0 hidden md:block md:w-[1000px]" }}
+        {{ svg src="vendor/starter-kit-podcaster/img/waves-vertical" class="h-full min-h-full absolute top-0 right-0 bottom-0 hidden md:block md:w-[1000px]" allow_attrs="x-data|:fill" }}
     </body>
 </html>

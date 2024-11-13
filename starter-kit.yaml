@@ -1,28 +1,17 @@
+updatable: true
 export_paths:
-  - app/Listeners/PubSubHubbub.php
-  - app/Providers/AppServiceProvider.php
-  - app/Providers/EventServiceProvider.php
-  - app/Widgets
-  - app/Modifiers
   - content
   - config/podcaster.php
   - config/statamic/cp.php
+  - config/statamic/system.php
   - resources/blueprints
   - resources/css
   - resources/js
-  - resources/views
-  - routes/web.php
+  - resources/views/errors
   - package.json
   - postcss.config.js
   - public/assets
   - public/build
-  - public/css
-  - public/img
-  - public/js
   - README.md
   - tailwind.config.js
   - vite.config.js
-  - .env.example
-dependencies:
-  livewire/livewire: ^3.0
-  statamic/podcast-categories: ^1.0

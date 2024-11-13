@@ -2,11 +2,11 @@
     <div class="flex items-start">
         <article class="pr-24 flex-1 py-8">
             {{ if podcast:explicit || explicit }}
-                <img src="/img/parental-advisory.svg" alt="Parental Advisory: Explicit Content Warning" class="w-16 mr-2 shadow-lg mb-6">
+                <img src="/vendor/starter-kit-podcaster/img/parental-advisory.svg" alt="Parental Advisory: Explicit Content Warning" class="w-16 mr-2 shadow-lg mb-6">
             {{ /if }}
             <h1 class="mb-6">{{ title | entities | widont }}</h1>
             <div class="flex items-start">
-                {{ partial:play-button height="h-10" width="h-10" }}
+                {{ partial:podcaster::partials/play-button height="h-10" width="h-10" }}
                 <div>
                     <p class="text-gray-800 text-lg">{{ summary }}</p>
                     <div class="mt-4 font-mono text-gray-500 text-xs flex space-x-3 uppercase tracking-widest">

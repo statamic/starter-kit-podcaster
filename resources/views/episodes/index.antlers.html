@@ -3,7 +3,7 @@
         <article class="order-2 md:order-first md:pr-32 flex-1 pt-16 pb-8">
             <h1 class="mb-8">{{ title }}</h1>
             {{ collection:episodes sort="date:{podcast:type}" }}
-                {{ partial:episodes/card }}
+                {{ partial:podcaster::episodes/card }}
             {{ /collection:episodes }}
         </article>
         <div class="order-1 md:w-[350px]">

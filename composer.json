@@ -1,10 +1,25 @@
 {
     "name": "statamic/starter-kit-podcaster",
     "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "Statamic\\Podcaster\\": "src/"
+        }
+    },
+    "require": {
+        "livewire/livewire": "^3.0",
+        "statamic/podcast-categories": "^1.0"
+    },
     "extra": {
         "statamic": {
             "name": "Starter Kit Podcaster",
+            "slug": "podcaster",
             "description": "Starter Kit Podcaster starter kit"
+        },
+        "laravel": {
+            "providers": [
+                "Statamic\\Podcaster\\ServiceProvider"
+            ]
         }
     },
     "config": {
