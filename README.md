@@ -1,4 +1,6 @@
 <!-- statamic:hide -->
+<p align="center"><img src="https://statamic.com/assets/branding/squircle/statamic-mark-lime.svg" width="100" alt="Statamic Logo" /></p>
+
 # Podcaster
 > A Turn-Key Podcasting Starter Kit for Statamic
 <!-- /statamic:hide -->
