@@ -1,5 +1,7 @@
 <?php
 
+use Statamic\CP\Color;
+
 return [
 
     /*
@@ -14,6 +16,21 @@ return [
     'enabled' => env('CP_ENABLED', true),
 
     'route' => env('CP_ROUTE', 'cp'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Authentication
+    |--------------------------------------------------------------------------
+    |
+    | Whether the Control Panel's authentication pages should be enabled,
+    | and where users should be redirected in order to authenticate.
+    |
+    */
+
+    'auth' => [
+        'enabled' => true,
+        'redirect_to' => null,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -43,31 +60,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Date Format
-    |--------------------------------------------------------------------------
-    |
-    | When a date is encountered throughout the Control Panel, it will be
-    | rendered in the following format unless overridden in specific
-    | fields, and so on. Any PHP date variables are permitted.
-    |
-    | This takes precedence over the date_format in system.php.
-    |
-    | https://www.php.net/manual/en/function.date.php
-    |
-    */
-
-    'date_format' => 'Y-m-d',
-
-    /*
-    |--------------------------------------------------------------------------
     | Pagination
     |--------------------------------------------------------------------------
     |
-    | The numbers of items to show on each paginated page.
+    | Here you may define the default pagination size as well as the options
+    | the user can select on any paginated listing in the Control Panel.
     |
     */
 
     'pagination_size' => 50,
+
+    'pagination_size_options' => [10, 25, 50, 100, 500],
 
     /*
     |--------------------------------------------------------------------------
@@ -97,12 +100,41 @@ return [
     | Theme
     |--------------------------------------------------------------------------
     |
-    | Optionally spice up the login and other outside-the-control-panel
-    | screens. You may choose between "rad" or "business" themes.
+    | Adjust the colors used in the Control Panel. Use the Color class
+    | to easily access the Tailwind CSS color palette.
     |
     */
 
-    'theme' => env('STATAMIC_THEME', 'rad'),
+    'theme' => [
+        // 'grays' => Color::Zinc,
+
+        // 'primary' => Color::Zinc[800],
+        // 'success' => Color::Green[400],
+        // 'danger' => Color::Red[600],
+
+        // 'ui-accent-bg' => Color::Zinc[800],
+        // 'ui-accent-text' => Color::Zinc[800],
+        // 'dark-ui-accent-bg' => Color::Zinc[950],
+        // 'dark-ui-accent-text' => Color::Zinc[400],
+
+        // 'body-bg' => Color::Zinc[100],
+        // 'body-border' => Color::Transparent,
+        // 'dark-body-bg' => Color::Zinc[900],
+        // 'dark-body-border' => Color::Zinc[950],
+
+        // 'global-header-bg' => Color::Zinc[800],
+        // 'dark-global-header-bg' => Color::Zinc[800],
+
+        // 'content-bg' => "linear-gradient(to right, hsl(0,0%,99%), #ffffff)",
+        // 'content-border' => Color::Zinc[200],
+        // 'dark-content-bg' => Color::Zinc[900],
+        // 'dark-content-border' => Color::Zinc[950],
+
+        // 'progress-bar' => Color::Volt,
+
+        // 'switch-bg' => Color::Green[500],
+        // 'dark-switch-bg' => Color::Green[600],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -119,8 +151,25 @@ return [
 
     'custom_logo_url' => env('STATAMIC_CUSTOM_LOGO_URL', null),
 
+    'custom_dark_logo_url' => env('STATAMIC_CUSTOM_DARK_LOGO_URL', null),
+
+    'custom_logo_text' => env('STATAMIC_CUSTOM_LOGO_TEXT', null),
+
     'custom_favicon_url' => env('STATAMIC_CUSTOM_FAVICON_URL', null),
 
     'custom_css_url' => env('STATAMIC_CUSTOM_CSS_URL', null),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Thumbnails
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define additional CP asset thumbnail presets.
+    |
+    */
+
+    'thumbnail_presets' => [
+        // 'medium' => 800,
+    ],
 
 ];
