@@ -1,7 +1,6 @@
 export_paths:
   - app/Listeners/PubSubHubbub.php
   - app/Providers/AppServiceProvider.php
-  - app/Providers/EventServiceProvider.php
   - app/Widgets
   - app/Modifiers
   - content
