@@ -24,4 +24,4 @@ export_paths:
   - .env.example
 dependencies:
   livewire/livewire: ^3.0
-  statamic/podcast-categories: ^1.0
+  statamic/podcast-categories: ^2.0
