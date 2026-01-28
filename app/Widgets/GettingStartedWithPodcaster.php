@@ -2,6 +2,7 @@
 
 namespace App\Widgets;
 
+use Statamic\Facades\Entry;
 use Statamic\Widgets\Widget;
 
 class GettingStartedWithPodcaster extends Widget
@@ -13,7 +14,7 @@ class GettingStartedWithPodcaster extends Widget
      */
     public function html()
     {
-        $episodes = \Statamic\Facades\Entry::query()->where('collection', 'episodes')->count();
+        $episodes = Entry::query()->where('collection', 'episodes')->count();
 
         return view('widgets.getting-started', compact('episodes'));
     }

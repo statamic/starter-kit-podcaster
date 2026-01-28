@@ -18,5 +18,6 @@ return [
 
     'pubsubhubbub' => [
         'enabled' => env('PODCASTER_PUBSUBHUBBUB_ENABLED', false),
-    ]
+    ],
+
 ];

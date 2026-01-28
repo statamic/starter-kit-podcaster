@@ -1,4 +1,5 @@
 title: Pages
+icon: page
 structure:
   root: true
 route: '{parent_uri}/{slug}'
