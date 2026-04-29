@@ -1,4 +1,16 @@
-/* This is all you. */
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Inter var', 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    --color-primary: var(--primary-color);
+    --color-secondary: var(--secondary-color);
+
+    --shadow-3xl: 40px 60px 90px -15px rgba(0, 0, 0, 0.3);
+}
+
+@custom-variant tall (@media (min-height: 900px));
 
 @import url('https://rsms.me/inter/inter.css');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
@@ -28,7 +40,7 @@ html {
     .plyr { width: 100%; }
 }
 
-@screen md {
+@variant md {
     .player {
         height: 80px;
     }
