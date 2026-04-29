@@ -12,14 +12,12 @@ export_paths:
   - resources/views
   - routes/web.php
   - package.json
-  - postcss.config.js
   - public/assets
   - public/build
   - public/css
   - public/img
   - public/js
   - README.md
-  - tailwind.config.js
   - vite.config.js
   - .env.example
 dependencies:
